@@ -3,16 +3,17 @@ import 'dart:io';
 class Cookie {
   final String name;
   final String value;
-
+  final String domain;
+  
   String path;
-  String domain;
+  
   bool secure;
   bool httpOnly;
 
   DateTime expires;
   int maxAge;
 
-  Cookie(this.name, this.value);
+  Cookie(this.name, this.value, this.domain);
 
   String toString() {
     StringBuffer sb = new StringBuffer();

@@ -28,10 +28,9 @@ class WebviewCookieManager {
       'url': url
     }).then((results) => results.map((Map result) {
           final c =
-              Cookie(result['name'], removeInvalidCharacter(result['value']))
+              Cookie(result['name'], removeInvalidCharacter(result['value']), result['domain'] )
                 // following values optionally work on iOS only
-                ..path = result['path']
-                ..domain = result['domain']
+                ..path = result['path']                
                 ..secure = result['secure']
                 ..maxAge = result['maxAge']
                 ..httpOnly = result['httpOnly'];

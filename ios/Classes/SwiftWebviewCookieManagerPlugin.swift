@@ -96,10 +96,10 @@ public class SwiftWebviewCookieManagerPlugin: NSObject, FlutterPlugin {
         if expiresDate != nil {
             properties[.expires] = Date(timeIntervalSince1970: expiresDate!)
         }
-        if isSecure != nil, isSecure! {
+        if isSecure != nil, isSecure {
             properties[.secure] = "TRUE"
         }
-        if isHttpOnly != nil, isHttpOnly! {
+        if isHttpOnly != nil, isHttpOnly {
             properties[.init("HttpOnly")] = "YES"
         }
 
